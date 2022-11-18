@@ -36,12 +36,12 @@ class loginController extends Controller {
     $user = 
     [
       'id'       => 123,
-      'name'     => 'Bee Default', 
-      'email'    => 'hellow@joystick.com.mx', 
+      'name'     => 'Admin Default', 
+      'email'    => 'admin@correo.com', 
       'avatar'   => 'myavatar.jpg', 
       'tel'      => '11223344', 
       'color'    => '#112233',
-      'user'     => 'bee',
+      'user'     => 'admin',
       'password' => '$2y$10$R18ASm3k90ln7SkPPa7kLObcRCYl7SvIPCPtnKMawDhOT6wPXVxTS'
     ];
 
@@ -53,6 +53,6 @@ class loginController extends Controller {
 
     // Loggear al usuario
     Auth::login($user['id'], $user);
-    Redirect::to('home/flash');
+    Redirect::to('home');
   }
 }
