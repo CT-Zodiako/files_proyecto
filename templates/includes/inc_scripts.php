@@ -9,6 +9,10 @@
 <!-- waitme js -->
 <script src="<?php echo PLUGINS.'waitme/waitMe.min.js'; ?>"></script>
 
+
+<!-- JQuerty UI -->
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" ></script>
+
 <!-- Lightbox js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 

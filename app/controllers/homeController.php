@@ -3,17 +3,22 @@
 class homeController extends Controller {
   function __construct()
   {
+    if (!Auth::validate()) {
+      Flasher::new('Debes iniciar sesión primero.', 'danger');
+      Redirect::to('login');
+    }
   }
 
   function index()
   {
+  
     $data =
     [
-      'title' => 'Home',
-      'bg'    => 'dark'
+      'title' => 'Proyectos',
+      'proyectos'    =>  proyectoModel::all_paginated()
     ];
 
-    View::render('bee', $data);
+    View::render('index', $data);
   }
 
   function test()

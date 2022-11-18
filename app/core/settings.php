@@ -15,7 +15,7 @@ define('SITE_LANG'   , $this->lng);
 // Versión de la aplicación
 define('BEE_NAME'    , $this->framework); // Viene desde Bee.php
 define('BEE_VERSION' , $this->version);   // Viene desde Bee.php
-define('SITE_NAME'   , 'EmpresaCool');    // Configurado desde Bee.php
+define('SITE_NAME'   , 'Administración y gestión documental de procesos de calidad asociados a ingeniería de software');    // Configurado desde Bee.php
 define('SITE_VERSION', '1.0.0');          // Configurado desde Bee.php
 
 // Ruta base de nuestro proyecto
@@ -68,7 +68,7 @@ define('UPLOADED'   , ASSETS.'uploads/');
 // Set para conexión local o de desarrollo
 define('LDB_ENGINE' , 'mysql');
 define('LDB_HOST'   , 'localhost');
-define('LDB_NAME'   , '__LOCAL_DB__');
+define('LDB_NAME'   , 'bdfiles');
 define('LDB_USER'   , 'root');
 define('LDB_PASS'   , '');
 define('LDB_CHARSET', 'utf8');
