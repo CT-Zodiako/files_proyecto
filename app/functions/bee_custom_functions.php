@@ -70,4 +70,15 @@ function format_proyecto_estado($estado)
   }
 
   return $output;
+
+
+}
+
+function get_tipo_lecciones(){
+  return[
+    ['texto', 'Texto'],
+    ['video', 'Video'],
+    ['descarga', 'Descarga'],
+    ['recurso_externo', 'Recurso Externo'],
+  ];
 }

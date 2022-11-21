@@ -11,12 +11,10 @@ class proyectosController extends Controller
   function __construct()
   {
     // Validación de sesión de usuario, descomentar si requerida
-    /**
     if (!Auth::validate()) {
       Flasher::new('Debes iniciar sesión primero.', 'danger');
       Redirect::to('login');
     }
-     */
   }
 
   function index()
@@ -26,11 +24,14 @@ class proyectosController extends Controller
 
   function ver($id)
   {
-    debug(proyectoModel::by_id($id));
+    if (!$proyecto = proyectoModel::by_id($id)) {
+      Flasher::new('No existe el proyecto.','danger');
+      Redirect::to('home');
+    }
     $data =
       [
-        'title' => 'Reemplazar título',
-
+        'title' => sprintf('Proyecto #%s', $proyecto['numero']),
+        'p'     => $proyecto
       ];
     View::render('ver', $data);
   }
@@ -48,7 +49,7 @@ class proyectosController extends Controller
 
       ];
 
-      if(!$id= proyectoModel::add(proyectoModel::$t1,$data)){
+      if(!$id= proyectoModel::add(proyectoModel::$t1, $data)){
         throw new PDOException("Error al guardar el proyecto ");
       }
 

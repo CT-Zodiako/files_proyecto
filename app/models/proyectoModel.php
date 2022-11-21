@@ -44,7 +44,7 @@ class proyectoModel extends Model
     if (!$rows) return [];
     //si si existe el registro carga
     $rows = $rows[0];
-    $sql = 'SELECT * FROM lacciones WHERE id_proyecto = :id ORDER By orden ASC';
+    $sql = 'SELECT * FROM lacciones WHERE id_proyecto = :id_proyecto ORDER BY orden ASC';
     $rows['lacciones'] = ($lacciones = parent::query($sql, ['id_proyecto' => $rows['id']])) ? $lacciones : [];
 
     return $rows;

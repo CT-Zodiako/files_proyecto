@@ -12,6 +12,27 @@
 
 <!-- JQuerty UI -->
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" ></script>
+<script>
+  $( function() {
+    $( "#accordion" )
+      .accordion({
+        header: "> div > h3",
+        collapsible: true
+      })
+      .sortable({
+        axis: "y",
+        handle: "h3",
+        stop: function( event, ui ) {
+          // IE doesn't register the blur when sorting
+          // so trigger focusout handlers to remove .ui-state-focus
+          ui.item.children( "h3" ).triggerHandler( "focusout" );
+ 
+          // Refresh accordion to handle new order
+          $( this ).accordion( "refresh" );
+        }
+      });
+  } );
+  </script>
 
 <!-- Lightbox js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>

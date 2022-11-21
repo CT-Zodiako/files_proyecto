@@ -30,7 +30,7 @@
                         <?php foreach ($d->proyectos->rows as $p) : ?>
                             <tr>
                                 <td><?php echo sprintf('<a href="proyectos/ver/%s">%s</a>', $p->id, $p->numero ); ?></td>
-                                <td><?php echo add_ellipsis($p->titulo, 50); ?></td>
+                                <td><?php echo empty($t->titulo) ? '<span class="text-muted">Sin titulo</span>' : add_ellipsis($t->titulo, 50); ?></td>
                                 <td><?php echo format_proyecto_estado( $p->status); ?></td>
                                 <td><?php echo format_date($p->creado); ?></td>
                                 <td>
