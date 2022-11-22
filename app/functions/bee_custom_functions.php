@@ -70,15 +70,40 @@ function format_proyecto_estado($estado)
   }
 
   return $output;
-
-
 }
 
-function get_tipo_lecciones(){
-  return[
+function get_tipo_lecciones()
+{
+  return [
     ['texto', 'Texto'],
     ['video', 'Video'],
     ['descarga', 'Descarga'],
     ['recurso_externo', 'Recurso Externo'],
   ];
+}
+
+function format_tipo_leccion($tipo_leccion)
+{
+  $icon = "";
+  $output = "";
+  $placeholder = '<i class="%s"> </i>';
+  switch ($tipo_leccion) {
+    case 'texto':
+      $icon = 'fas fa-file-pdf';
+      break;
+    case 'video':
+      $icon = 'fas fa-video';
+      break;
+    case 'descarga':
+      $icon = 'fas fa-donwload';
+      break;
+    case 'recurso_externo':
+      $icon= 'fas fa-external-link-alt';
+      break;
+
+    default:
+    $icon = 'fas fa-cuestion-circle';
+      break;
+  }
+  return sprintf($placeholder, $icon);
 }

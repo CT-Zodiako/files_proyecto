@@ -89,9 +89,20 @@
               <div id="accordion">
                 <?php foreach ($d->p->lacciones as $l) : ?>
                   <div class="group">
-                    <h3><?php echo $l->titulo?></h3>
+                    <h3><?php echo sprintf('%s %s', format_tipo_leccion($l->tipo), $l->titulo); ?></h3>
                     <div>
-                       <?php echo empty($l->contenido)? '<span> class-"text-muted" Sin contenido<?span>' : $l->contenido; ?>>
+                      <?php echo empty($l->contenido) ? '<span class-"text-muted"> Sin contenido</span>' : $l->contenido; ?>
+                      <div class="mt-3">
+                        <div class="btn-group">
+                          <button class="button btn btn-success bt-sm"> <i class="fas fa-edit"> </i></button>
+
+                          <button class="button btn btn-danger bt-sm"> <i class="fas fa-trash"> </i> </button>
+
+
+                        </div>
+
+                        <button class=" btn btn-sm <?php echo $l->$status === 'pendiente' ? 'btn-warning text-dark' : 'btn-success '; ?>"> <i class="fas fa-check"></i> Lista</button>
+                      </div>
                     </div>
                   </div>
                 <?php endforeach ?>
