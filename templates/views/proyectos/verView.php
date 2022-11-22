@@ -94,14 +94,14 @@
                       <?php echo empty($l->contenido) ? '<span class-"text-muted"> Sin contenido</span>' : $l->contenido; ?>
                       <div class="mt-3">
                         <div class="btn-group">
-                          <button class="button btn btn-success bt-sm"> <i class="fas fa-edit"> </i></button>
+                          <button class="button btn btn-success bt-sm open_update_leccion_form" data-id="<?php echo$l->id;?>"> <i class="fas fa-edit"> </i></button>
 
-                          <button class="button btn btn-danger bt-sm"> <i class="fas fa-trash"> </i> </button>
+                          <button class="button btn btn-danger bt-sm delete_leccion" data-id="<?php echo$l->id;?>"> <i class="fas fa-trash"> </i> </button>
 
 
                         </div>
 
-                        <button class=" btn btn-sm <?php echo $l->$status === 'pendiente' ? 'btn-warning text-dark' : 'btn-success '; ?>"> <i class="fas fa-check"></i> Lista</button>
+                        <button class=" btn btn-sm update_leccion_status <?php echo $l->status === 'pendiente' ? 'btn-warning text-dark' : 'btn-success '; ?>" data-id="<?php echo$l->id;?>"> <i class="fas fa-check"></i> Lista</button>
                       </div>
                     </div>
                   </div>
